@@ -6,8 +6,6 @@
 #include <QMutex>
 
 #include "export.h"
-#include "mylist.hpp"
-#include "myvector.hpp"
 
 struct HELPERLIBRARY_EXPORT ContainerTypes
 {

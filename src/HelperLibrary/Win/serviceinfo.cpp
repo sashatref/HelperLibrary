@@ -1,7 +1,7 @@
 #include "serviceinfo.h"
 #include "../Exceptions/userexception.h"
 #include "../releaseassert.h"
-#include "../Perfomance/scopetimer.h"
+#include "../scopetimer.h"
 #include "../functions.h"
 #include "winapihelper.h"
 

@@ -1,26 +1,71 @@
 set(PROJECT_NAME HelperLibrary)
 
-project(${PROJECT_NAME} VERSION 1.0.1)
+project(${PROJECT_NAME})
 
 set(SOURCES
+    Decorator/basedecorator.cpp
+    Decorator/basedecorator.h
     DomElementWrapper.cpp
     DomElementWrapper.h
+    Events/settingchangeevent.cpp
+    Events/settingchangeevent.h
     Exceptions/userexception.cpp
     Exceptions/userexception.h
     ExtendApp/AppLocker.cpp
     ExtendApp/AppLocker.h
+    ExtendApp/appconfig.cpp
+    ExtendApp/appconfig.h
+    ExtendApp/appsettings.cpp
+    ExtendApp/appsettings.h
+    ExtendApp/extendapp.cpp
+    ExtendApp/extendapp.h
+    ExtendApp/singleapplicationprivate.cpp
+    ExtendApp/singleapplicationprivate.h
+    ExtendApp/uilanginfo.cpp
+    ExtendApp/uilanginfo.h
+    FileBasedProject/FileBasedProject.cpp
+    FileBasedProject/FileBasedProject.h
+    FileBasedProject/filebasedprojectp.cpp
+    FileBasedProject/filebasedprojectp.h
+    IGadget/VariantMapHelper.cpp
+    IGadget/VariantMapHelper.h
+    IGadget/igadget.cpp
+    IGadget/igadget.h
     Json/JsonStreamParser.cpp
     Json/JsonStreamParser.h
     Json/JsonUtils.cpp
     Json/JsonUtils.h
+    JsonProtocol/datatransfer.cpp
+    JsonProtocol/datatransfer.h
+    JsonProtocol/jsonmessage.cpp
+    JsonProtocol/jsonmessage.h
+    JsonProtocol/jsonprotocolhelper.cpp
+    JsonProtocol/jsonprotocolhelper.h
     LanguageHelper/LanguageCombo.cpp
     LanguageHelper/LanguageCombo.h
+    LanguageHelper/languagehelper.cpp
+    LanguageHelper/languagehelper.h
+    MultiPart/multipartfile.cpp
+    MultiPart/multipartfile.h
+    MultiPart/multipartparser.cpp
+    MultiPart/multipartparser.h
+    PluginHelper/abstractplugin.h
     PluginHelper/baseplugincreatormanager.cpp
     PluginHelper/baseplugincreatormanager.h
+    PluginHelper/basepluginmanager.cpp
+    PluginHelper/basepluginmanager.h
     PluginHelper/iplugincreator.cpp
     PluginHelper/iplugincreator.h
+    PluginHelper/plugininfoview.cpp
+    PluginHelper/plugininfoview.h
+    PluginHelper/plugininfoview.ui
+    PluginHelper/pluginliststate.cpp
+    PluginHelper/pluginliststate.h
     PluginHelper/preloadplugininfo.cpp
     PluginHelper/preloadplugininfo.h
+    PluginHelper/priv/plugindetails.cpp
+    PluginHelper/priv/plugindetails.h
+    PluginHelper/priv/plugindetails.ui
     Randomizer.cpp
     Randomizer.h
     Resources/rcc.cpp
@@ -29,240 +74,177 @@ set(SOURCES
     Resources/resourcecompilier.h
     Resources/resourceexplorer.cpp
     Resources/resourceexplorer.h
+    Resources/resourceexplorer.ui
     Resources/resourceexplorerdialog.cpp
     Resources/resourceexplorerdialog.h
-    Scenario/scenarioinvoker.cpp
+    Resources/resourceexplorerdialog.ui
     Security/ISecurityPlugin.cpp
-    Security/SecurityList.cpp
-    Security/SecurityPluginManager.cpp
-    SimpleTextFilter.cpp
-    TcpBrowserProtocol.cpp
-    Widgets/EnumEditor/enumeditorform.cpp
-    Widgets/FilterWidget/filterwidget.cpp
-    Widgets/FilterWidget/priv/filterwidgetconf.cpp
-    Widgets/FilterWidget/priv/filterwidgetconfigdialog.cpp
-    Widgets/SimplePresetCombo/SimplePresetCombo.cpp
-    Widgets/SimpleTextFilter/SimpleTextFilterDialog.cpp
-    Widgets/TrayMenu/traymenu.cpp
-    Widgets/flowlayout.cpp
-    Widgets/independentwidgetholder.cpp
-    Widgets/infowindow.cpp
-    Widgets/makepasswordform.cpp
-    Widgets/myprogressdialog.cpp
-    Widgets/selectlistdialog/selectlistdialog.cpp
-    Widgets/waitdialog.cpp
-    Widgets/whatiisthistoolbutton.cpp
-    Widgets/widgethelper.cpp
-    Widgets/widgetanimation.cpp
-    Widgets/imagewidget.cpp
-    Widgets/imagelistwidget.cpp
-    Widgets/keyboardlayoutviewer.cpp
-    Widgets/showiconsform.cpp
-    Widgets/extendedwidget.cpp
-    Widgets/extendeddialog.cpp
-    Widgets/singlewidget.cpp
-    Widgets/extendedmainwindow.cpp
-    Widgets/isavewidget.cpp
-    converterfunctions.cpp
-    Widgets/dialogwrapper.cpp
-    filedownloader.cpp
-    functions.cpp
-    mathematics.cpp
-    pdf/PdfExporter.cpp
-    php.cpp
-    programlauncher.cpp
-    xmlutils.cpp
-    eventlistener.cpp
-    objectfactory.cpp
-    iobject.cpp
-    LanguageHelper/languagehelper.cpp
-    ivariant.cpp
-    buildversion.cpp
-    simplecrypt.cpp
-    Styles/iconsenum.cpp
-    Perfomance/scopetimer.cpp
-    Widgets/layoutsaver.cpp
-    ExtendApp/extendapp.cpp
-    ExtendApp/uilanginfo.cpp
-    ExtendApp/appconfig.cpp
-    ExtendApp/singleapplicationprivate.cpp
-    Events/settingchangeevent.cpp
-    signalwaiter.cpp
-    Widgets/progressdialog.cpp
-    IGadget/VariantMapHelper.cpp
-    IGadget/igadget.cpp
-    translithelper.cpp
-    cmdargs.cpp
-    ExtendApp/appsettings.cpp
-    MultiPart/multipartparser.cpp
-    MultiPart/multipartfile.cpp
-    Decorator/basedecorator.cpp
-    FileBasedProject/FileBasedProject.cpp
-    FileBasedProject/filebasedprojectp.cpp
-    Widgets/ListWidgets/extlist.cpp
-    Widgets/VariantMapEditor/variantmapeditor.cpp
-    Widgets/VariantMapEditor/priv/variantmapmodel.cpp
-    Widgets/ListWidgets/presetslist.cpp
-    Widgets/Text/complextexteditor.cpp
-    Widgets/Text/complextextdialog.cpp
-    Widgets/Text/priv/complextexteditorp.cpp
-    Widgets/Text/priv/jsonsyntax.cpp
-    Widgets/Text/priv/xmlsyntax.cpp
-    cistring.cpp
-    JsonProtocol/jsonprotocolhelper.cpp
-    JsonProtocol/jsonmessage.cpp
-    Widgets/SearchForm/searchform.cpp
-    Widgets/SearchForm/priv/searchformp.cpp
-    Widgets/SearchForm/listwidgetsearcher.cpp
-    Widgets/SearchForm/isearcher.h
-    Widgets/SearchForm/isearcher.cpp
-    Widgets/SearchForm/searchform.h
-    Widgets/SearchForm/priv/searchformp.h
-    Widgets/SearchForm/listwidgetsearcher.h
-    Widgets/SearchForm/searchform.ui
-    Widgets/Actions/statusaction.cpp
-    FunctionWrappper.cpp
-    Widgets/PresetController/priv/presetcontrollerp.cpp
-    Widgets/PresetController/presetcontrollerform.cpp
-    Widgets/SearchLineEdit/searchlineedit.cpp
-    Widgets/Text/priv/isyntax.cpp
-    Widgets/aboutdialog.cpp
-    JsonProtocol/datatransfer.cpp
-    PluginHelper/priv/plugindetails.cpp
-    PluginHelper/plugininfoview.cpp
-    PluginHelper/basepluginmanager.cpp
-    PluginHelper/pluginliststate.cpp
-    Styles/stylefilewatcher.cpp
-    Scenario/scenarioinvoker.h
     Security/ISecurityPlugin.h
+    Security/SecurityList.cpp
     Security/SecurityList.h
+    Security/SecurityPluginManager.cpp
     Security/SecurityPluginManager.h
+    SimpleTextFilter.cpp
     SimpleTextFilter.h
-    TcpBrowserProtocol.h
+    Styles/iconsenum.cpp
+    Styles/iconsenum.h
+    Styles/stylefilewatcher.cpp
+    Styles/stylefilewatcher.h
+    Widgets/Actions/statusaction.cpp
+    Widgets/Actions/statusaction.h
+    Widgets/EnumEditor/enumeditorform.cpp
     Widgets/EnumEditor/enumeditorform.h
+    Widgets/EnumEditor/enumeditorform.ui
+    Widgets/FilterWidget/filterwidget.cpp
     Widgets/FilterWidget/filterwidget.h
+    Widgets/FilterWidget/filterwidget.ui
+    Widgets/FilterWidget/priv/filterwidgetconf.cpp
     Widgets/FilterWidget/priv/filterwidgetconf.h
+    Widgets/FilterWidget/priv/filterwidgetconfigdialog.cpp
     Widgets/FilterWidget/priv/filterwidgetconfigdialog.h
+    Widgets/FilterWidget/priv/filterwidgetconfigdialog.ui
+    Widgets/ListWidgets/extlist.cpp
+    Widgets/ListWidgets/extlist.h
+    Widgets/ListWidgets/extlist.ui
+    Widgets/ListWidgets/presetslist.cpp
+    Widgets/ListWidgets/presetslist.h
+    Widgets/ListWidgets/presetslist.ui
+    Widgets/PresetController/presetcontrollerform.cpp
+    Widgets/PresetController/presetcontrollerform.h
+    Widgets/PresetController/presetcontrollerform.ui
+    Widgets/PresetController/priv/presetcontrollerp.cpp
+    Widgets/PresetController/priv/presetcontrollerp.h
+    Widgets/SearchForm/isearcher.cpp
+    Widgets/SearchForm/isearcher.h
+    Widgets/SearchForm/listwidgetsearcher.cpp
+    Widgets/SearchForm/listwidgetsearcher.h
+    Widgets/SearchForm/priv/searchformp.cpp
+    Widgets/SearchForm/priv/searchformp.h
+    Widgets/SearchForm/searchform.cpp
+    Widgets/SearchForm/searchform.h
+    Widgets/SearchForm/searchform.ui
+    Widgets/SearchLineEdit/searchlineedit.cpp
+    Widgets/SearchLineEdit/searchlineedit.h
+    Widgets/SearchLineEdit/searchlineedit.ui
+    Widgets/SimplePresetCombo/SimplePresetCombo.cpp
     Widgets/SimplePresetCombo/SimplePresetCombo.h
+    Widgets/SimplePresetCombo/SimplePresetCombo.ui
+    Widgets/SimpleTextFilter/SimpleTextFilterDialog.cpp
     Widgets/SimpleTextFilter/SimpleTextFilterDialog.h
+    Widgets/SimpleTextFilter/SimpleTextFilterDialog.ui
+    Widgets/Text/complextextdialog.cpp
+    Widgets/Text/complextextdialog.h
+    Widgets/Text/complextextdialog.ui
+    Widgets/Text/complextexteditor.cpp
+    Widgets/Text/complextexteditor.h
+    Widgets/Text/complextexteditor.ui
+    Widgets/Text/priv/complextexteditorp.cpp
+    Widgets/Text/priv/complextexteditorp.h
+    Widgets/Text/priv/isyntax.cpp
+    Widgets/Text/priv/isyntax.h
+    Widgets/Text/priv/jsonsyntax.cpp
+    Widgets/Text/priv/jsonsyntax.h
+    Widgets/Text/priv/xmlsyntax.cpp
+    Widgets/Text/priv/xmlsyntax.h
+    Widgets/TrayMenu/traymenu.cpp
     Widgets/TrayMenu/traymenu.h
-    Widgets/flowlayout.h
-    Widgets/independentwidgetholder.h
-    Widgets/makepasswordform.h
-    Widgets/myprogressdialog.h
-    Widgets/selectlistdialog/selectlistdialog.h
-    Widgets/waitdialog.h
-    Widgets/whatiisthistoolbutton.h
-    Widgets/widgetanimation.h
-    Widgets/imagewidget.h
-    Widgets/imagelistwidget.h
-    Widgets/widgethelper.h
-    Widgets/isavewidget.h
-    Widgets/infowindow.h
-    Widgets/keyboardlayoutviewer.h
-    Widgets/layoutsaver.h
-    Widgets/showiconsform.h
-    Widgets/extendedwidget.h
-    Widgets/singlewidget.h
-    Widgets/extendedmainwindow.h
-    Widgets/extendeddialog.h
-    asyncfuture/asyncfuture.h
-    converterfunctions.h
-    DigToStrRus.h
+    Widgets/VariantMapEditor/priv/variantmapmodel.cpp
+    Widgets/VariantMapEditor/priv/variantmapmodel.h
+    Widgets/VariantMapEditor/variantmapeditor.cpp
+    Widgets/VariantMapEditor/variantmapeditor.h
+    Widgets/VariantMapEditor/variantmapeditor.ui
+    Widgets/aboutdialog.cpp
+    Widgets/aboutdialog.h
+    Widgets/aboutdialog.ui
+    Widgets/dialogwrapper.cpp
     Widgets/dialogwrapper.h
-    filedownloader.h
+    Widgets/dialogwrapper.ui
+    Widgets/extendeddialog.cpp
+    Widgets/extendeddialog.h
+    Widgets/extendedmainwindow.cpp
+    Widgets/extendedmainwindow.h
+    Widgets/extendedwidget.cpp
+    Widgets/extendedwidget.h
+    Widgets/flowlayout.cpp
+    Widgets/flowlayout.h
+    Widgets/imagelistwidget.cpp
+    Widgets/imagelistwidget.h
+    Widgets/imagewidget.cpp
+    Widgets/imagewidget.h
+    Widgets/independentwidgetholder.cpp
+    Widgets/independentwidgetholder.h
+    Widgets/infowindow.cpp
+    Widgets/infowindow.h
+    Widgets/infowindow.ui
+    Widgets/isavewidget.cpp
+    Widgets/isavewidget.h
+    Widgets/keyboardlayoutviewer.cpp
+    Widgets/keyboardlayoutviewer.h
+    Widgets/layoutsaver.cpp
+    Widgets/layoutsaver.h
+    Widgets/makepasswordform.cpp
+    Widgets/makepasswordform.h
+    Widgets/makepasswordform.ui
+    Widgets/myprogressdialog.cpp
+    Widgets/myprogressdialog.h
+    Widgets/progressdialog.cpp
+    Widgets/progressdialog.h
+    Widgets/progressdialog.ui
+    Widgets/selectlistdialog/selectlistdialog.cpp
+    Widgets/selectlistdialog/selectlistdialog.h
+    Widgets/selectlistdialog/selectlistdialog.ui
+    Widgets/showiconsform.cpp
+    Widgets/showiconsform.h
+    Widgets/showiconsform.ui
+    Widgets/singlewidget.cpp
+    Widgets/singlewidget.h
+    Widgets/waitdialog.cpp
+    Widgets/waitdialog.h
+    Widgets/waitdialog.ui
+    Widgets/whatiisthistoolbutton.cpp
+    Widgets/whatiisthistoolbutton.h
+    Widgets/widgetanimation.cpp
+    Widgets/widgetanimation.h
+    Widgets/widgethelper.cpp
+    Widgets/widgethelper.h
+    another.cpp
+    anymacro.h
+    buildversion.cpp
+    buildversion.h
+    cistring.cpp
+    cistring.h
+    cmdargs.cpp
+    cmdargs.h
+    converterfunctions.cpp
+    converterfunctions.h
+    eventlistener.cpp
+    eventlistener.h
+    export.h
+    functions.cpp
     functions.h
     helperscontainter.h
-    mathematics.h
-    mylist.hpp
-    myvector.hpp
-    pdf/PdfExporter.h
-    php.h
-    programlauncher.h
-    setgetMacro.h
-    singleton.hpp
-    xmlutils.h
-    export.h
-    eventlistener.h
-    objectfactory.h
+    iobject.cpp
     iobject.h
-    LanguageHelper/languagehelper.h
+    ivariant.cpp
     ivariant.h
-    anymacro.h
-    buildversion.h
-    simplecrypt.h
-    Styles/iconsenum.h
-    releaseassert.h
-    Perfomance/scopetimer.h
-    ExtendApp/extendapp.h
-    ExtendApp/singleapplicationprivate.h
-    ExtendApp/uilanginfo.h
-    ExtendApp/appconfig.h
-    signalwaiter.h
-    Events/settingchangeevent.h
+    objectfactory.cpp
+    objectfactory.h
+    pdf/PdfExporter.cpp
+    pdf/PdfExporter.h
+    programlauncher.cpp
+    programlauncher.h
     project_pch.h
-    another.cpp
-    Widgets/progressdialog.h
-    IGadget/VariantMapHelper.h
-    IGadget/igadget.h
-    translithelper.h
-    cmdargs.h
-    ExtendApp/appsettings.h
-    MultiPart/multipartparser.h
-    MultiPart/multipartfile.h
-    Decorator/basedecorator.h
-    FileBasedProject/FileBasedProject.h
-    FileBasedProject/filebasedprojectp.h
-    Widgets/ListWidgets/extlist.h
-    Widgets/VariantMapEditor/variantmapeditor.h
-    Widgets/VariantMapEditor/priv/variantmapmodel.h
-    Widgets/ListWidgets/presetslist.h
-    Widgets/Text/complextexteditor.h
-    Widgets/Text/complextextdialog.h
-    Widgets/Text/priv/complextexteditorp.h
-    Widgets/Text/priv/jsonsyntax.h
-    Widgets/Text/priv/xmlsyntax.h
-    cistring.h
-    JsonProtocol/jsonprotocolhelper.h
-    JsonProtocol/jsonmessage.h
-    Widgets/Actions/statusaction.h
-    FunctionWrappper.h
-    Widgets/PresetController/priv/presetcontrollerp.h
-    Widgets/PresetController/presetcontrollerform.h
-    Widgets/SearchLineEdit/searchlineedit.h
-    Widgets/Text/priv/isyntax.h
-    Widgets/aboutdialog.h
-    JsonProtocol/datatransfer.h
-    PluginHelper/abstractplugin.h
-    PluginHelper/priv/plugindetails.h
-    PluginHelper/plugininfoview.h
-    PluginHelper/basepluginmanager.h
-    PluginHelper/pluginliststate.h
-    Styles/stylefilewatcher.h
-    Resources/resourceexplorer.ui
-    Resources/resourceexplorerdialog.ui
-    Widgets/EnumEditor/enumeditorform.ui
-    Widgets/FilterWidget/filterwidget.ui
-    Widgets/FilterWidget/priv/filterwidgetconfigdialog.ui
-    Widgets/SimplePresetCombo/SimplePresetCombo.ui
-    Widgets/SimpleTextFilter/SimpleTextFilterDialog.ui
-    Widgets/infowindow.ui
-    Widgets/makepasswordform.ui
-    Widgets/selectlistdialog/selectlistdialog.ui
-    Widgets/showiconsform.ui
-    Widgets/progressdialog.ui
-    Widgets/ListWidgets/extlist.ui
-    Widgets/VariantMapEditor/variantmapeditor.ui
-    Widgets/ListWidgets/presetslist.ui
-    Widgets/Text/complextexteditor.ui
-    Widgets/Text/complextextdialog.ui
-    Widgets/PresetController/presetcontrollerform.ui
-    Widgets/SearchLineEdit/searchlineedit.ui
-    Widgets/aboutdialog.ui
-    PluginHelper/priv/plugindetails.ui
-    PluginHelper/plugininfoview.ui
-    Widgets/dialogwrapper.ui
-    Widgets/waitdialog.ui
+    releaseassert.h
+    setgetMacro.h
+    signalwaiter.cpp
+    signalwaiter.h
+    simplecrypt.cpp
+    simplecrypt.h
+    singleton.hpp
+    xmlutils.cpp
+    xmlutils.h
+    scopetimer.h
+    scopetimer.cpp
 )
 
 set(CMAKE_AUTOUIC_SEARCH_PATHS
@@ -327,32 +309,9 @@ list(APPEND SOURCES
     ZipManager/qzip.cpp
 )
 
-#qtservice
-
-list(APPEND SOURCES
-    qtservice/qtservicecontroller.h
-    qtservice/qtservicebase.h
-    qtservice/qtservicesysprivate.h
-    qtservice/qtservicecontrollerhandler.h
-    qtservice/handlerthread.h
-    qtservice/qtservicebaseprivate.h
-    qtservice/qtserviceappeventfilter.h
-    qtservice/qtservicecontroller.cpp
-    qtservice/qtservicebase.cpp
-    qtservice/qtservicesysprivate.cpp
-    qtservice/qtservicecontrollerhandler.cpp
-    qtservice/handlerthread.cpp
-    qtservice/qtservicebaseprivate.cpp
-    qtservice/qtserviceappeventfilter.cpp
-    qtservice/qtservice.h
-    qtservice/qtservice.cpp
-)
-
 add_subdirectory(zlib)
 
 if(WIN32)
-#    add_subdirectory(qtservice)
-
     list(APPEND SOURCES
         Win/registry.cpp
         Win/ProcessInfo.cpp

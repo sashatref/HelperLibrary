@@ -4,7 +4,6 @@
 
 #include "Exceptions/userexception.h"
 #include "Events/settingchangeevent.h"
-#include "Perfomance/scopetimer.h"
 #include "Logger/logger.h"
 #include "Serialization/serializer.h"
 
@@ -16,6 +15,7 @@
 #include "appsettings.h"
 #include "../buildversion.h"
 #include "AppLocker.h"
+#include "scopetimer.h"
 
 #include <ZipManager/zipwriter.h>
 
