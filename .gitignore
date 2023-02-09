@@ -1,0 +1,13 @@
+/Build-*
+/Builds_*
+/translations
+*.user
+*.stash
+*.pro.user.*
+/BUILD_QT_5_9_2_VC_14
+/BUILD_QT_5_9_2_VC_14_x64
+*.exp
+*.ilk
+*.pdb
+/include
+/bin

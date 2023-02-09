@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PresetControolerForm</class>
+ <widget class="QMainWindow" name="PresetControolerForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>888</width>
+    <height>414</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    </item>
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;В данном списке отображается аткуальный список доступных &amp;quot;пресетов&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListView::item:selected
+{
+    background: #3399FF;
+	color: white;
+}</string>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar_presetController">
+   <property name="windowTitle">
+    <string>Панель управления списком предустановок</string>
+   </property>
+   <property name="toolTip">
+    <string>Панель управления списком предустановок</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSavePreset"/>
+   <addaction name="actionLoadPreset"/>
+   <addaction name="actionRemoveSelected"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_saveLoad">
+   <property name="windowTitle">
+    <string>Панель загрузки/сохранения предустановок</string>
+   </property>
+   <property name="toolTip">
+    <string>Панель загрузки/сохранения предустановок</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionLoadFromFile"/>
+   <addaction name="actionSaveToFile"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_searchPresets">
+   <property name="windowTitle">
+    <string>Панель управления поиском предустановок</string>
+   </property>
+   <property name="toolTip">
+    <string>Панель управления поиском предустановок</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSearch"/>
+  </widget>
+  <action name="actionSavePreset">
+   <property name="text">
+    <string>Сохранить предустановку</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При нажатие на данную кнопку отображается диалог с предложением ввести имя &amp;quot;пресета&amp;quot;, в который будет сохранено текущее состояние данных.&lt;/p&gt;&lt;p&gt;Если данное имя &amp;quot;пресета&amp;quot; уже присутствует в окне &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot;, то будет отображен запрос на перезапись &amp;quot;пресета&amp;quot;.&lt;/p&gt;&lt;p&gt;Если введено новое имя, то данное имя будет добавлено в окно &lt;span style=&quot; font-weight:600;&quot;&gt;&amp;quot;Список предустановок&lt;/span&gt;&amp;quot;&lt;/p&gt;&lt;p&gt;Если перед нажатием данной кнопки выбрать какой-то элемент списка из окна &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot;, то в диалоге ввода имени &amp;quot;пресета&amp;quot; заранее будет заполнено имя этого элемента.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionLoadPreset">
+   <property name="text">
+    <string>Загрузить предустановку</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При нажатие на кнопку, отображается запрос на загрузку данных из выбаранного &amp;quot;пресета&amp;quot;.&lt;/p&gt;&lt;p&gt;После подтверждения запроса - текущие данные стираются и загружаются данные из &amp;quot;пресета&amp;quot;.&lt;/p&gt;&lt;p&gt;Если не выбраного ни одного элемента в окне &lt;span style=&quot; font-weight:600;&quot;&gt;&amp;quot;Список предустановок&lt;/span&gt;&amp;quot;, то будет отображено соответствующее предупреждение.&lt;/p&gt;&lt;p&gt;Аналогом нажатия этой кнопки - является двойное нажатие на выбранный элемент &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Списка предустановок&lt;/span&gt;&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionRemoveSelected">
+   <property name="text">
+    <string>Удалить выбранные предустановки</string>
+   </property>
+   <property name="toolTip">
+    <string>Удалить выбранные предустановки</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;При нажатие на кнопку - отображается запрос на удаление выбранных элементов окна &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;В запросе отображается список элементов, которые будут удалены. В случае согласия, указанные элементы удаляются и исчезают из окна &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot;. &lt;/p&gt;&lt;p&gt;Если в окне &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot; не выбрано ни одного элемента, то будет отображено соответствующее предупреждение.&lt;/p&gt;&lt;p&gt;Данное действие можно вызвать, если нажать кнопку &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Delete&lt;/span&gt;&amp;quot;, когда окно &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot; находится в фокусе.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionLoadFromFile">
+   <property name="text">
+    <string>Загрузить из файла</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;По нажатию кнопки появляется диалог выбора файла, откуда загрузить &amp;quot;пресеты&amp;quot;.&lt;/p&gt;&lt;p&gt;После выбора файла, будет отображен диалог, в котором отображается список доступных предустановок в выбранном файле. Есть возможность выбрать только интересующие предустановки. &lt;/p&gt;&lt;p&gt;Если список выбранных предустановок пересекается с уже существующими записями в окне &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Список предустановок&lt;/span&gt;&amp;quot;, то будет выданно предупрежение со списком, какие предустановки будут перезаписаны и возможностью отмени загрузку.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionSaveToFile">
+   <property name="text">
+    <string>Сохранить в файл</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;По нажатию кнопки появляется диалог выбора файла, куда будут сохранены &amp;quot;пресеты&amp;quot;.&lt;/p&gt;&lt;p&gt;После выбора файла, все выбранные элементы &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Списка предустановок&lt;/span&gt;&amp;quot; сохраняются в файл и отображается диалог с списком сохраненных элементов.&lt;/p&gt;&lt;p&gt;Если ни один элемент списка не выбран, то будет отображено соответствующее предупреждение.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Поиск - Список предустановок</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Отображает окно поиска по &amp;quot;Списку предустановок&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
