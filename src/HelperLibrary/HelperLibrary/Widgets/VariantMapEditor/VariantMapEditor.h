@@ -1,1 +1,1 @@
-#include "Widgets/VariantMapEditor/variantmapeditor.h"
+#include "Widgets/VariantMapEditor/VariantMapEditor.h"

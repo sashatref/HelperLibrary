@@ -4,6 +4,20 @@
 
 namespace Randomizer
 {
+    bool HELPERLIBRARY_EXPORT & rand(bool &_v);
+    char HELPERLIBRARY_EXPORT & rand(char &_v, char _min = -128, char _max = 127);
+    int HELPERLIBRARY_EXPORT & rand(int &_v, int _min = 0, int _max = 1000000);
+    double HELPERLIBRARY_EXPORT & rand(double &_v, double _min = 0, double _max = 1000000);
+    QString HELPERLIBRARY_EXPORT & rand(QString &_v, int _minLen = 3, int _maxLen = 8);
+    std::string HELPERLIBRARY_EXPORT & rand(std::string &_v, int _minLen = 3, int _maxLen = 8);
+    QByteArray HELPERLIBRARY_EXPORT & rand(QByteArray &_v, int _minLen = 3, int _maxLen = 50);
+    QDate HELPERLIBRARY_EXPORT & rand(QDate &_v);
+    QDateTime HELPERLIBRARY_EXPORT & rand(QDateTime &_v);
+    QTime HELPERLIBRARY_EXPORT & rand(QTime &_v);
+    QRect HELPERLIBRARY_EXPORT & rand(QRect &_v);
+    QPoint HELPERLIBRARY_EXPORT & rand(QPoint &_v);
+    QSize HELPERLIBRARY_EXPORT & rand(QSize &_v);
+
     template<class Type>
     Type createRand()
     {
@@ -106,22 +120,5 @@ namespace Randomizer
 //        _v.Int = static_cast<EnumType>(temp);
 //        return _v;
 //    }
-
-    bool HELPERLIBRARY_EXPORT & rand(bool &_v);
-    char HELPERLIBRARY_EXPORT & rand(char &_v, char _min = -128, char _max = 127);
-    int HELPERLIBRARY_EXPORT & rand(int &_v, int _min = 0, int _max = 1000000);
-    double HELPERLIBRARY_EXPORT & rand(double &_v, double _min = 0, double _max = 1000000);
-    QString HELPERLIBRARY_EXPORT & rand(QString &_v, int _minLen = 3, int _maxLen = 8);
-    std::string HELPERLIBRARY_EXPORT & rand(std::string &_v, int _minLen = 3, int _maxLen = 8);
-    QByteArray HELPERLIBRARY_EXPORT & rand(QByteArray &_v, int _minLen = 3, int _maxLen = 50);
-    QDate HELPERLIBRARY_EXPORT & rand(QDate &_v);
-    QDateTime HELPERLIBRARY_EXPORT & rand(QDateTime &_v);
-    QTime HELPERLIBRARY_EXPORT & rand(QTime &_v);
-
-    QRect HELPERLIBRARY_EXPORT & rand(QRect &_v);
-    QPoint HELPERLIBRARY_EXPORT & rand(QPoint &_v);
-    QSize HELPERLIBRARY_EXPORT & rand(QSize &_v);
-
-
 }
 

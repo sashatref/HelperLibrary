@@ -338,7 +338,7 @@
   <customwidget>
    <class>HelperLibraryNS::SimplePresetCombo</class>
    <extends>QWidget</extends>
-   <header>../SimplePresetCombo/SimplePresetCombo.h</header>
+   <header>Widgets/SimplePresetCombo/SimplePresetCombo.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

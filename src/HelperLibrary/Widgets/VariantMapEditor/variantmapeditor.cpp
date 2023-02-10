@@ -1,4 +1,4 @@
-#include "variantmapeditor.h"
+#include "VariantMapEditor.h"
 #include "ui_variantmapeditor.h"
 
 #include "priv/variantmapmodel.h"

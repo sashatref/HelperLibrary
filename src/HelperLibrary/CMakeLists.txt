@@ -151,7 +151,7 @@ set(SOURCES
     Widgets/VariantMapEditor/priv/variantmapmodel.cpp
     Widgets/VariantMapEditor/priv/variantmapmodel.h
     Widgets/VariantMapEditor/variantmapeditor.cpp
-    Widgets/VariantMapEditor/variantmapeditor.h
+    Widgets/VariantMapEditor/VariantMapEditor.h
     Widgets/VariantMapEditor/variantmapeditor.ui
     Widgets/aboutdialog.cpp
     Widgets/aboutdialog.h
