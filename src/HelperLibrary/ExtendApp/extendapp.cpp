@@ -17,7 +17,9 @@
 #include "AppLocker.h"
 #include "scopetimer.h"
 
+#ifndef Q_OS_MACOS
 #include <ZipManager/zipwriter.h>
+#endif
 
 #include "../Security/SecurityPluginManager.h"
 #include "../Security/ISecurityPlugin.h"
@@ -90,6 +92,9 @@ struct ExtendAppP
 
     void backupPrevLayout(const QString &_path)
     {
+#ifdef Q_OS_MACOS
+        Q_UNUSED(_path);
+#else
         const QString backupPath = QFileInfo(appSettings.m_layoutPath).absolutePath() + "/backup";
         if(!QDir().exists(backupPath))
         {
@@ -112,6 +117,7 @@ struct ExtendAppP
         writer.setCompressionPolicy(ZipWriter::AlwaysCompress);
         writer.addFile("layout.bin", &sourceFile);
         writer.close();
+#endif
     }
 };
 

@@ -300,16 +300,18 @@ list(APPEND SOURCES
     Serialization/serpropertyinfo.cpp
 )
 
-#ZipManager
-list(APPEND SOURCES
-    ZipManager/gzipwrapper.h
-    ZipManager/zipreader.h
-    ZipManager/zipwriter.h
-    ZipManager/gzipwrapper.cpp
-    ZipManager/qzip.cpp
-)
+if(NOT APPLE)
+    #ZipManager
+    list(APPEND SOURCES
+        ZipManager/gzipwrapper.h
+        ZipManager/zipreader.h
+        ZipManager/zipwriter.h
+        ZipManager/gzipwrapper.cpp
+        ZipManager/qzip.cpp
+    )
 
-add_subdirectory(zlib)
+    add_subdirectory(zlib)
+endif()
 
 if(WIN32)
     list(APPEND SOURCES
@@ -367,7 +369,9 @@ target_include_directories(${PROJECT_NAME}
     INTERFACE ${CMAKE_BINARY_DIR}/include/${PROJECT_NAME}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
+if(NOT APPLE)
+    target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
+endif()
 
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE
