@@ -171,7 +171,11 @@ bool LanguageHelper::updateUiByShortName(const QString &_shortName)
         //загрузка нового формата appName_lang.ts из каталога tranlsations
 
         {
+#ifdef Q_OS_MACOS
+            QDir trDir(qApp->applicationDirPath() + "/../Resources/translations");
+#else
             QDir trDir(qApp->applicationDirPath() + "/translations");
+#endif
             if(trDir.exists())
             {
                 QStringList files = trDir.entryList(QStringList() << QString("*_%1.qm").arg(_shortName));
