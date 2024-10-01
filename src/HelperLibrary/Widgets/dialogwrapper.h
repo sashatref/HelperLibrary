@@ -1,6 +1,6 @@
 #pragma once
 
-#include "export.h"
+#include "../export.h"
 
 #include <QDialog>
 
